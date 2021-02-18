@@ -3,7 +3,6 @@
 
 #### == Projet final ==
 * cursus “Développeur Front-End JS”
-
     |– par Softeam Institute, Paris
     * https://www.softeaminstitute.fr/
 
