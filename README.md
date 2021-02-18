@@ -33,7 +33,7 @@
     * Consulter les dernières actualités mises en avant en page d'acceuil (“A la Une” ou “A la Une pour vous”)
     * Commenter les articles
 
-    |– pour le journaliste ou le rédacteur professionnel
+    |– pour le journaliste (ou le rédacteur professionnel)
     * Se connecter à un back-office avec ses identifiants
     * Ajouter un article (ou "news")
     * Éditer, modifier et/ou supprimer un article 
