@@ -1,23 +1,23 @@
 # Giltree News
-== Javascript :: Node | Express | MongoDB | Angular v.11 |
-
+** Javascript :: Node | Express | MongoDB | Angular v.11 **
 
 #### == Projet final ==
-cursus “Développeur Front-End JS”
-par Softeam Institute, Paris
-https://www.softeaminstitute.fr/
+* cursus “Développeur Front-End JS”
+    |– par Softeam Institute, Paris
+        * https://www.softeaminstitute.fr/
 
 
 #### == Description de notre projet ==
-Giltree-News est une web-app “modèle” de diffusion d'actualités/news à destination de plusieurs type d'audience (ex. le grand public, personnel interne d'une société, etc.)
+* Giltree-News est une web-app “modèle” de diffusion d'actualités/news à destination de plusieurs type d'audience (ex. le grand public, personnel interne d'une société, etc.)
 
-Elle permet à utilisateur final (aka un internaute/mobinaute/client) de consulter des articles, de les noter, de les commenter, de les partager et de les sauvegarder. 
-Elle donne aussi la possibilité à un journaliste ou à un rédacteur professionnel de gérer la publication des articles via un back-office. 
+    * Elle permet à utilisateur final – soit un internaute/mobinaute/client – de consulter des articles, de les noter, de les commenter, de les partager et/ou de les sauvegarder.
+    * Elle donne aussi la possibilité à un journaliste ou à un rédacteur professionnel de gérer la publication des articles via un back-office. 
+
 
 #### == L'équipe Giltree News ==
-Achraf el youssoufi (aka @hrafDigit)
-@Helmi Sassi
-@Alaa Belasker
+* Achraf el youssoufi (aka @hrafDigit) | Full-stack JS
+* @Helmi Sassi | Back-End JS
+* @Alaa Belasker | Front-End JS
 
 
 #### == Liste des fonctionnalités ==
