@@ -14,9 +14,12 @@
 
 
 #### == L'équipe Giltree News ==
-* Achraf el youssoufi (aka @hrafDigit) | Full-stack JS
 * @Helmi Sassi | Back-End JS
+    * |– référent :: base de données + APIs
 * @Alaa Belasker | Front-End JS
+    * |– référent :: front-end + user-stories
+* Achraf el youssoufi (aka @hrafDigit) | Full-stack JS
+    * |– référent :: spécifications & maquettes fonctionnelles + DA/UI/graphic design + chef de projet/full-stack
 
 
 #### == Liste des fonctionnalités ==
