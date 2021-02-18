@@ -67,7 +67,7 @@
     * Statistiques sur les articles 
 
 
-Plus de détail sur Trello, disponible ici https://trello.com/b/edeQd6cC/giltreenews-web-app
+* Plus de détail sur Trello :: disponible ici https://trello.com/b/edeQd6cC/giltreenews-web-app
 
 
 #### == Spécifications techniques
