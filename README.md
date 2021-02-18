@@ -7,7 +7,7 @@
 
 
 #### == Description de notre projet ==
-* Giltree-News est une web-app “modèle” de diffusion d'actualités/news à destination de plusieurs type d'audience (ex. le grand public, personnel interne d'une société, etc.)
+* Giltree-News est une web-app “modèle” de diffusion d'actualités/news à destination de plusieurs types d'audience (ex. grand public, personnel interne d'une société, etc.)
 
     * Elle permet à utilisateur final – soit un internaute/mobinaute/client – de consulter des articles, de les noter, de les commenter, de les partager et/ou de les sauvegarder.
     * Elle donne aussi la possibilité à un journaliste ou à un rédacteur professionnel de gérer la publication des articles via un back-office. 
@@ -17,9 +17,9 @@
 * @Helmi Sassi | Back-End JS
     * |– référent :: base de données + APIs
 * @Alaa Belasker | Front-End JS
-    * |– référent :: front-end + user-stories
+    * |– référent :: front-end + user-stories (Trello)
 * Achraf el youssoufi (aka @hrafDigit) | Full-stack JS
-    * |– référent :: spécifications & maquettes fonctionnelles + DA/UI/graphic design + chef de projet/full-stack
+    * |– référent :: spécifications & maquettes fonctionnelles/UX + DA/UI/graphic design + git + chef de projet/full-stack
 
 
 #### == Liste des fonctionnalités ==
@@ -35,7 +35,7 @@
 
     |– pour le journaliste ou le rédacteur professionnel
     * Se connecter à un back-office avec ses identifiants
-    * Ajouter un article ("news")
+    * Ajouter un article (ou "news")
     * Éditer, modifier et/ou supprimer un article 
     * Répondre aux commentaires sur les articles
 
