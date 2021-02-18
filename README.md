@@ -18,7 +18,7 @@
     * |– référent :: base de données + APIs
 * @Alaa Belasker | Front-End JS
     * |– référent :: front-end + user-stories (Trello)
-* Achraf el youssoufi (aka @hrafDigit) | Full-stack JS
+* Achraf el youssoufi (@hrafDigit) | Full-stack JS
     * |– référent :: spécifications & maquettes fonctionnelles/UX + DA/UI/graphic design + git + chef de projet/full-stack
 
 
