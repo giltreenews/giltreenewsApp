@@ -1,0 +1,20 @@
+<div class="container" *ngIf="news">
+
+    <h2 style="font-weight: bold;font-size: x-large">{{news.title}}</h2> 
+    <hr/>
+    
+      <div>
+         <img src="{{news.urlToImage}}" style="border-bottom: 1px solid black; width: 75%; height:75%">
+      </div> 
+      <div><label >Par : </label>{{ news.author}} </div> 
+      <div style="font-size: large;">
+         {{news.description}}
+      </div>
+      <div style="font-size: large;">
+         {{news.content}}
+      </div>
+    </div>
+    
+    
+    
+    

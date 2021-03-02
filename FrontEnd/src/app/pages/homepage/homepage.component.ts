@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { NewsService } from 'src/app/services/news.service';
 import { Component, OnInit } from '@angular/core';
+import { NewsModel } from 'src/app/models/news.model';
 
 @Component({
   selector: 'app-homepage',
@@ -6,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  newsShema: NewsSchema= {};
+  newsShema: NewsModel= {};
   news:any;
   newsBis:any;
   
