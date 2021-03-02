@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <ngb-carousel *ngIf="news">
+          <ng-template ngbSlide *ngFor="let new of news">
+            <div class="carousel-cell" *ngIf="new.urlToImage != null" >
+            <a routerLink="../article/{{ new._id }}"><img  src="{{new.urlToImage}}" alt="" style="width: 100%; height:75%" ></a>
+            <div class="carousel-caption" style="background-color:rgb(189, 178, 178);border: 1px solid transparent; border-radius: 5px;">
+              <h3 style="color:rgb(32, 34, 30); text-align: center; font-weight: bolder;font-size:large;">{{ new.title }}</h3>
+              
+            </div>
+          </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="col-sm" style="border-top: 1px solid grey; border-bottom: 1px solid grey;">
+    <h2 > LES DERNIERES NOUVELLES POUR VOUS</h2>
+  </div>
+  </div>
+  <div class="row" >
+  
+      <div *ngFor="let new of news"> 
+          <div class="card bg-light mb-3"  *ngIf="new.urlToImage != null" style="width:30em; height: auto;">
+            <div class="col-sm">
+            <div class="card-header" >
+              <h2>{{ new.source.name }}</h2>
+            </div>
+              <div class="card-body" >
+                <h3 class="card-title" style="font-weight:bold;">{{ new.title }}</h3>
+                <p class="card-text">
+                  <p>{{ new.content }}</p>
+                <button  class="btn btn-secondary" routerLink="/user/article/{{ new._id }}">Lire la suite de l'article</button>
+                <h5 style="margin-left:60%;">{{ new.publishedAt.substring(0, 10)+ ' ' + new.publishedAt.substring(11, 19) }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Infos Flash : Informations en continu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let new of newsBis">
+                <td> <a routerLink="/user/article/{{ new._id }}"> {{ new.title }} </a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
