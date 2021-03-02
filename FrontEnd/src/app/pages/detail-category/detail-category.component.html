@@ -1,0 +1,16 @@
+
+
+<div class="container" *ngFor="let new of news">
+
+    <h2 style="font-weight: bold;font-size: x-large">{{new.title}}</h2> 
+    <hr/>
+    
+      <div>
+         <img src="{{new.urlToImage}}" style="border-bottom: 1px solid black; width: 75%; height:75%">
+      </div> 
+      <div><label >Par : </label>{{ new.author}} </div> 
+      <div style="font-size: large;">
+         <a href=# routerLink="/user/article/{{ new._id }}">{{new.description}} </a>
+      </div>
+     
+    </div>
