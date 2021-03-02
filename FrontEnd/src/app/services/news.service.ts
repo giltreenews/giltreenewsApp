@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { NewsSchema } from '../interfaces/news-schema';
+
+import { NewsModel } from '../models/news.model';
 
 const baseUrl = 'http://localhost:8080/news';
 
@@ -11,7 +12,7 @@ const baseUrl = 'http://localhost:8080/news';
 export class NewsService {
 
   
-  news: Array<NewsSchema> = new Array<NewsSchema>();
+  news: Array<NewsModel> = new Array<NewsModel>();
 
   constructor(private http: HttpClient) { }
 

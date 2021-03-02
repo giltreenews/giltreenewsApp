@@ -10,13 +10,15 @@ import { AngularMaterialModule } from './angular-material.module';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { DetailArticleComponent } from './pages/detail-article/detail-article.component';
 import { DetailCategoryComponent } from './pages/detail-category/detail-category.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     DetailArticleComponent,
-    DetailCategoryComponent
+    DetailCategoryComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
