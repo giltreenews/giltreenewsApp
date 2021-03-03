@@ -11,6 +11,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { DetailArticleComponent } from './pages/detail-article/detail-article.component';
 import { DetailCategoryComponent } from './pages/detail-category/detail-category.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { HeaderComponent } from './shared/header/header.component';
     HomepageComponent,
     DetailArticleComponent,
     DetailCategoryComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-   AngularMaterialModule
+   AngularMaterialModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

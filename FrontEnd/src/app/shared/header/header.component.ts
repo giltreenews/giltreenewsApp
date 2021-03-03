@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   roleEnum = RoleEnum;
 
-  constructor(private userService: UserService, private router: Router) { }
+  //constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
 

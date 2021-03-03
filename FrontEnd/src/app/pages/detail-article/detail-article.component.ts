@@ -9,7 +9,7 @@ import { NewsModel } from 'src/app/models/news.model';
   templateUrl: './detail-article.component.html',
   styleUrls: ['./detail-article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class DetailArticleComponent implements OnInit {
  
   news!: NewsModel;
   @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;

@@ -23,7 +23,8 @@ const modules: any[] = [
   MatListModule,
   MatTableModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  
 ];
 @NgModule({
   imports: [ ...modules ],

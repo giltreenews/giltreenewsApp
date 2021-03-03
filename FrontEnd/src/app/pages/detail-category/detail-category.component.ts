@@ -8,7 +8,7 @@ import { NewsService } from 'src/app/services/news.service';
   templateUrl: './detail-category.component.html',
   styleUrls: ['./detail-category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class DetailCategoryComponent implements OnInit {
 
 
   news:any;
