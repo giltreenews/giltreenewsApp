@@ -12,6 +12,7 @@ import { DetailArticleComponent } from './pages/detail-article/detail-article.co
 import { DetailCategoryComponent } from './pages/detail-category/detail-category.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     DetailArticleComponent,
     DetailCategoryComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
