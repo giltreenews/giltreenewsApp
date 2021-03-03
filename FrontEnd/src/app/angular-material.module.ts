@@ -30,8 +30,6 @@ const modules: any[] = [
   MatToolbarModule,
   MatIconModule,
   MatMenuModule
-  
-  
 ];
 @NgModule({
   imports: [ ...modules ],

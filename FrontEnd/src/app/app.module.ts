@@ -15,6 +15,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UserComponent } from './layout/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
    AngularMaterialModule,
    HttpClientModule,
+   NgbModule,
    
   ],
   providers: [],
