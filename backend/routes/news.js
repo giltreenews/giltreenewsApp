@@ -19,4 +19,6 @@ router.get('/select/:id', newsController.showOne);
 
 router.delete('/delete/:id', newsController.delete);
 
+router.get('/search/:category', newsController.searchByCategory);
+
 module.exports = router;

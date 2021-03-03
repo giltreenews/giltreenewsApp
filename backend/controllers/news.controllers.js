@@ -106,6 +106,13 @@ newsController.update = function (req, res) {
          });
      };
     
+     newsController.searchByCategory = function (req, res, next) {
+        const category= req.params.category;
+        model.find({category: category}, (err, result) => {
+            if (err) { console.log(err); }
+            res.send(result);
+        }).sort( { publishedAt: -1 } );
+    };
 
 
 module.exports = newsController;
