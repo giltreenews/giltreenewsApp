@@ -12,6 +12,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 const modules: any[] = [
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -24,6 +27,10 @@ const modules: any[] = [
   MatTableModule,
   MatButtonModule,
   MatCardModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatMenuModule
+  
   
 ];
 @NgModule({
