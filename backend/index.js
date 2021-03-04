@@ -4,11 +4,15 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var news = require('./routes/news');
 
+var user = require('./routes/user');
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/news', news);
+
+app.use('/user', user);
 
 var server = {
     port: 8080
