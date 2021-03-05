@@ -68,4 +68,15 @@ var newsController = function () { }
             });
      };
 
+     newsController.search = function (req, res, next) {
+        var search = req.body.search;
+        model.find({$text: {$search: `${search}` }}, {score: {$meta: "textScore"}},
+        (err, result) => {
+            if (err) { console.log(err); }
+          
+            res.send(result);
+            
+        }).sort({score:{$meta:"textScore"}});
+    };
+
      module.exports = newsController;
