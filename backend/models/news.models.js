@@ -13,6 +13,8 @@ module.exports = function(){
         content: String,
 		category: String
     });
+    news.index({'$ **': 'texte'}); 
+
 
     return db.model('news', news);
 
