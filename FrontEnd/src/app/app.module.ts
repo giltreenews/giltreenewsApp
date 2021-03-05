@@ -17,6 +17,11 @@ import { UserComponent } from './layout/user/user.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtInterceptor } from './interceptor/jwtInterceptor';
+import { GererLesArticlesComponent } from './pages/gerer-les-articles/gerer-les-articles.component';
+import { EditArticleComponent } from './pages/edit-article/edit-article.component';
+import { AddArticleComponent } from './pages/add-article/add-article.component';
+import { FormsModule, NgForm } from '@angular/forms';
+import { JournalistComponent } from './layout/journalist/journalist.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,11 @@ import { JwtInterceptor } from './interceptor/jwtInterceptor';
     HeaderComponent,
     NavbarComponent,
     FooterComponent,
-    UserComponent
+    UserComponent,
+    GererLesArticlesComponent,
+    EditArticleComponent,
+    AddArticleComponent,
+    JournalistComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +45,7 @@ import { JwtInterceptor } from './interceptor/jwtInterceptor';
    AngularMaterialModule,
    HttpClientModule,
    NgbModule,
+   FormsModule,
    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],

@@ -1,3 +1,4 @@
+import { CommentsModel } from 'src/app/models/comments.model';
 export interface NewsModel {
     _id?: string;
     source?: 
@@ -10,4 +11,5 @@ export interface NewsModel {
         publishedAt?: string;
         content?: string;
         category?: string;
+        comments? : CommentsModel[];
 }

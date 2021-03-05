@@ -1,0 +1,87 @@
+<h1 style="text-align: center;">Ajouter un article</h1>
+
+<form (ngSubmit)=ajouterArticle() style="margin:200px; padding:50px; ">
+
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">Auteur</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="ngModel"
+      [(ngModel)]="newsShema.author" required>
+  </div>
+  <!-- <div [hidden]="author.valid || author.pristine">Le nom est obligatoire</div> -->
+
+  <br />
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">Titre</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="title"
+      [(ngModel)]="newsShema.title" required>
+  </div>
+  <!-- <div [hidden]="title.valid || title.pristine"> Le title est obligatoire</div> -->
+  <br />
+  <div>
+
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Description</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+        name="description" [(ngModel)]="newsShema.description" required>
+    </div>
+    <br />
+    <!-- <div [hidden]="description.valid || description.pristine"> Le description est obligatoire</div> -->
+    <div>
+
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Contenu</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+          name="content" [(ngModel)]="newsShema.content" required>
+      </div>
+      <!-- <div [hidden]="content.valid || content.pristine"> Le content est obligatoire</div> -->
+      <br />
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Url image</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+          name="urlToImage" [(ngModel)]="newsShema.urlToImage" required>
+      </div>
+      <br />
+
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg"> Date de publication</span>
+        </div>
+        <input type="date" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+          name="publishedAt" [(ngModel)]="newsShema.publishedAt" required>
+      </div>
+      <br />
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg"> Catégorie</span>
+        </div>
+        <select name="content" [(ngModel)]="newsShema.category">
+          <option *ngFor="let category of categories">{{category}}</option>
+        </select>
+      </div>
+      <br />
+
+
+
+      <div>
+    
+        <br />
+        <button type="submit" class="btn btn-primary"> Ajouter</button>
+        
+
+
+      </div>
+
+    </div>
+  </div>
+</form>
+
