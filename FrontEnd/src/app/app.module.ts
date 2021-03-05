@@ -20,7 +20,7 @@ import { JwtInterceptor } from './interceptor/jwtInterceptor';
 import { GererLesArticlesComponent } from './pages/gerer-les-articles/gerer-les-articles.component';
 import { EditArticleComponent } from './pages/edit-article/edit-article.component';
 import { AddArticleComponent } from './pages/add-article/add-article.component';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { JournalistComponent } from './layout/journalist/journalist.component';
 import { LoginComponent } from './login/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -52,7 +52,8 @@ import { CreateAccountComponent } from './create-account/create-account/create-a
    HttpClientModule,
    NgbModule,
    FormsModule,
-   ToastrModule.forRoot()
+   ToastrModule.forRoot(),
+   ReactiveFormsModule
    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],

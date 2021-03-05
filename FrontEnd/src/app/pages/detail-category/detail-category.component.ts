@@ -18,21 +18,18 @@ export class DetailCategoryComponent implements OnInit {
     this.activateRoute.queryParams.subscribe(param=>
       {
         const search = param.search;
-        this.newService.search(search).subscribe(data => {
-          console.log(data);
-          this.news = data; 
-        });
+        const category = param.category;
+        if(search){
+          this.newService.search(search).subscribe(data => {
+            this.news = data; 
+          });
+        }
+        if(category){
+          this.newService.getAll({category}).subscribe(data=>{
+            this.news = data});
+        }
         
       });
-
-      this.activateRoute.params.subscribe(params =>{
-      
-        this.newService.getAll(params['category']).subscribe(data=>{
-          this.news = data})
-      });
-
-  } 
-
-
+    }
 
 }
