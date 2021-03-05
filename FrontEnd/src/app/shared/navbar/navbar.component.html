@@ -1,34 +1,20 @@
 <div class="container-fluid" style="border-bottom:3px solid grey;border-top:3px solid grey; margin-top: 10px" >
-    <nav class="navbar navbar-expand-md navbar-light bg-light" >
-    <mat-toolbar class="navbar navbar-light bg-light justify-content-between" >
-        
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <mat-icon aria-hidden="false" aria-label="Example home icon" ><a routerLink="" style="text-decoration: none;color:none">home</a></mat-icon>
-    
-        
-    
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.SCIENCE ">Sciences</button>
-          
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.SPORT ">Sports</button>
-         
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.BUSINESS">Business</button>
-         
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.ENTERTAINMENT">Loisirs</button>
-          
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.HEALTH"> Santé</button>
-          
-          <button mat-button color [routerLink]="'/user/detail-category/' +categoryEnum.TECHNOLOGY">Technologies</button>
-          
-          
-       
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-         
-          </form>
-    </mat-toolbar>
-    </nav>
-    </div>
+  <nav class="navbar navbar-expand-md navbar-light bg-light" >
+  <mat-toolbar class="navbar navbar-light bg-light justify-content-between" >
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" ><a routerLink="" style="text-decoration: none;color:none">home</a></mat-icon>
+        <button mat-button color (click)="goTo(categoryEnum.SCIENCE)">Sciences</button>
+        <button mat-button color (click)="goTo(categoryEnum.SPORT)">Sports</button>
+        <button mat-button color (click)="goTo(categoryEnum.BUSINESS)">Business</button>
+        <button mat-button color (click)="goTo(categoryEnum.ENTERTAINMENT)">Loisirs</button>
+        <button mat-button color (click)="goTo(categoryEnum.HEALTH)" > Santé</button>
+        <button mat-button color (click)="goTo(categoryEnum.TECHNOLOGY)">Technologies</button>
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" (keyup)="searchText = $event.target.value" type="search" placeholder="Rechercher" aria-label="Search">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" (click)="search()"  >Rechercher</button>
+        </div>
+  </mat-toolbar>
+  </nav>
+  </div>
