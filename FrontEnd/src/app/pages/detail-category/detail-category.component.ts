@@ -15,9 +15,9 @@ export class DetailCategoryComponent implements OnInit {
   constructor(private service : NewsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.route.params.subscribe(categorie =>{
+   this.route.params.subscribe(params =>{
       
-      this.service.getAll({categorie:categorie}).subscribe(data=>{
+      this.service.getAll(params['category']).subscribe(data=>{
         this.news = data})
     });
     } 
