@@ -1,0 +1,55 @@
+
+<span class=" cursor-pointer" style="font-size:x-large; outline:none;text-align:center;" routerLink="/user/home"> 
+    <span  style="font-weight: bolder;" >GILTREE</span>
+    <span style="font-weight: lighter;">NEWS</span>
+</span>
+
+<h1 style="text-align: center;">Créer un compte</h1>
+
+<div style="margin:200px; padding:50px; ">
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Nom</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="lastName" [(ngModel)]="login.lastName"
+           required placeholder="entrer votre nom">
+      </div>
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Prenom</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="firstName" [(ngModel)]="login.firstName"
+           required placeholder="entrer votre adresse mail">
+      </div>
+
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">Adresse mail</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="email" [(ngModel)]="login.email"
+       required placeholder="entrer votre adresse mail">
+  </div>
+  <!-- <div [hidden]="author.valid || author.pristine">Le nom est obligatoire</div> -->
+
+  <br />
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg" >Mot de passe</span>
+    </div>
+    <input type="password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="password" [(ngModel)]="login.password"
+      required >
+  </div>
+  <!-- <div [hidden]="title.valid || title.pristine"> Le title est obligatoire</div> -->
+  <br />
+  
+      <div>
+    
+        <br />
+        <button class="btn btn-primary" (click)="confirmer()"> Confirmer</button>
+      
+        
+      </div>
+
+   
+
+    </div>

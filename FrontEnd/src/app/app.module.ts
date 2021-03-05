@@ -24,6 +24,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { JournalistComponent } from './layout/journalist/journalist.component';
 import { LoginComponent } from './login/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CreateAccountComponent } from './create-account/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
     AddArticleComponent,
     JournalistComponent,
     LoginComponent,
+    CreateAccountComponent,
     
   ],
   imports: [
