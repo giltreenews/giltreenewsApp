@@ -15,6 +15,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSidenavModule } from '@angular/material/sidenav';
 const modules: any[] = [
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -29,7 +32,10 @@ const modules: any[] = [
   MatCardModule,
   MatToolbarModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatSidenavModule
 ];
 @NgModule({
   imports: [ ...modules ],
