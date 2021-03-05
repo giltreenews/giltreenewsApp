@@ -22,6 +22,8 @@ import { EditArticleComponent } from './pages/edit-article/edit-article.componen
 import { AddArticleComponent } from './pages/add-article/add-article.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { JournalistComponent } from './layout/journalist/journalist.component';
+import { LoginComponent } from './login/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { JournalistComponent } from './layout/journalist/journalist.component';
     GererLesArticlesComponent,
     EditArticleComponent,
     AddArticleComponent,
-    JournalistComponent
+    JournalistComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { JournalistComponent } from './layout/journalist/journalist.component';
    HttpClientModule,
    NgbModule,
    FormsModule,
+   ToastrModule.forRoot()
    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],

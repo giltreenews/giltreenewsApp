@@ -1,3 +1,4 @@
+import { RoleGuard } from './guards/role.guard.guard';
 import { EditArticleComponent } from './pages/edit-article/edit-article.component';
 import { AddArticleComponent } from './pages/add-article/add-article.component';
 import { GererLesArticlesComponent } from './pages/gerer-les-articles/gerer-les-articles.component';
