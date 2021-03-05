@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+var authenticateJwt = require('../middleware/authenticateJwt');
+var roleCheck = require('../middleware/roleCheck');
 var newsController = require('../controllers/news.controllers');
 
 router.post('/', newsController.show);
