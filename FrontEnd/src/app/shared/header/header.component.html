@@ -7,8 +7,11 @@
   
   
     <div class="col3-sm" >
+      
       <button mat-button [matMenuTriggerFor]="menu" routerLink="/login" *ngIf="!user" >Se connecter</button>
-  <button mat-button [matMenuTriggerFor]="menu" *ngIf="user">Connecté</button>
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="user"><mat-icon style="font-size:50px;">account_circle</mat-icon></button>
+ 
+ 
       <mat-menu #menu="matMenu">
         <button mat-menu-item  *ngIf="user?.role === roleEnum.USER">Gérer mes préférences</button>
         <button mat-menu-item (click)="signout()" >Déconnexion</button>
@@ -20,7 +23,11 @@
   
   
     </div>
+    <span  class="col4-sm"  *ngIf="user">
    
+      Bonjour {{ user.firstName }}
+     
+      </span>
   
   </div>
   

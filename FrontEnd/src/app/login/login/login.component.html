@@ -1,41 +1,90 @@
 
-<span class="col1-sm cursor-pointer" style="font-size:x-large; outline:none;;" routerLink="/user/home"> 
-    <span  style="font-weight: bolder;" >GILTREE</span>
-    <span style="font-weight: lighter;">NEWS</span>
-  </span>
-  
-  <h1 style="text-align: center;">Se connecter</h1>
-  
-  <div style="margin:200px; padding:50px; ">
-  
-    <div class="input-group input-group-lg">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Adresse mail</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="email" [(ngModel)]="login.email"
-         required placeholder="entrer votre adresse mail">
-    </div>
-    <!-- <div [hidden]="author.valid || author.pristine">Le nom est obligatoire</div> -->
-  
-    <br />
-    <div class="input-group input-group-lg">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-lg" >Mot de passe</span>
-      </div>
-      <input type="password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="password" [(ngModel)]="login.password"
-        required >
-    </div>
-    <!-- <div [hidden]="title.valid || title.pristine"> Le title est obligatoire</div> -->
-    <br />
+    <div class="d-flex justify-content-center align-items-center flex-column" style="height:100%">
+        <span class="col1-sm cursor-pointer" style="font-size:x-large; outline:none;" routerLink="/user/home"> 
+            <span  style="font-weight: bolder;" >GILTREE</span>
+            <span style="font-weight: lighter;">NEWS</span>
+          </span>
     
-        <div>
-      
-          <br />
-          <button class="btn btn-primary" (click)="seconnecter()"> Se connecter</button>
-          <a  href=# routerLink="/create-account"> Créer un compte </a>
-          
-        </div>
-  
-     
-  
-      </div>
+          <mat-tab-group dynamicHeight>
+            <mat-tab label="Connexion">
+              <div class="example-small-box mat-elevation-z4">
+                <mat-card class="example-card">
+                  <mat-card-header style="justify-content: center">
+                    <mat-card-title> <mat-icon style="font-size:50px;">account_circle</mat-icon></mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <form class="example-form">
+                      <table class="example-full-width" cellspacing="0">
+                        <tr>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Adresse mail" [(ngModel)]="login.email" name="email" required>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                        <td><mat-form-field class="example-full-width">
+                          <input matInput placeholder="Mot de passe" [(ngModel)]="login.password"type="password" name="password" required>
+                        </mat-form-field></td>
+                      </tr></table>
+                    </form>
+                   
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-raised-button (click)="seconnecter()" color="primary">Se connecter</button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+            </mat-tab>
+            <mat-tab label="Créer un compte">
+              <div class="example-large-box mat-elevation-z4">
+                <div class="example-small-box mat-elevation-z4">
+                  <mat-card class="example-card">
+                    <mat-card-header style="justify-content: center">
+                      <mat-card-title><mat-icon style="font-size:50px;;">person_add</mat-icon>
+                      </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <form class="example-form">
+                        <table class="example-full-width" cellspacing="0">
+                          <tr>
+                           
+                          </tr>
+                          <tr>
+                            <td>
+                              <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Prénom" [(ngModel)]="login.firstName" name="firstName" required>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Nom" [(ngModel)]="login.lastName" name="lastName" required>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <td>
+                            <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Adresse mail" [(ngModel)]="login.email" name="email" required>
+                            </mat-form-field>
+                          </td>
+                          <tr>
+                          <td><mat-form-field class="example-full-width">
+                            <input matInput placeholder="Mot de passe" [(ngModel)]="login.password"type="password" name="password" required>
+                          </mat-form-field></td>
+                        </tr></table>
+                      </form>
+                     
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-raised-button (click)="confirmer()" color="primary" >Confirmer</button>
+                    </mat-card-actions>
+                  </mat-card>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+    
+   

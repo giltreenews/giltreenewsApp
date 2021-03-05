@@ -14,9 +14,22 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit {
 login: UserModel = {};
 
-  constructor(private service : UserService,private router: Router, private toastr: ToastrService) { }
+  constructor(private service : UserService,private router: Router, private toastr: ToastrService,
+    private registerservice: UserService,
+     
+    
+    ) { }
 
   ngOnInit(): void {
+  }
+  confirmer() {
+    this.login.role = RoleEnum.USER;
+    this.registerservice.register(this.login).subscribe((res) => {
+      this.router.navigateByUrl('/login');
+      this.toastr.success('Votre compte a bien été crée')
+    })
+
+
   }
   seconnecter(){
     this.service.login(this.login).subscribe(userInfo=>{

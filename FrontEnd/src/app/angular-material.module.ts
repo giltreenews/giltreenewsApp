@@ -18,6 +18,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTabsModule} from '@angular/material/tabs';
 const modules: any[] = [
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -35,7 +37,9 @@ const modules: any[] = [
   MatMenuModule,
   MatPaginatorModule,
   MatSortModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatProgressSpinnerModule,
+  MatTabsModule
 ];
 @NgModule({
   imports: [ ...modules ],
