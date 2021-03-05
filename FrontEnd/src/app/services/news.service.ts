@@ -31,6 +31,9 @@ export class NewsService {
     delete(id: any): Observable<any> {
       return this.http.delete(`${baseUrl}/delete/${id}` );
     }
+    search(search:any):Observable<any>{
+      return this.http.post(`${baseUrl}/recherche`,{search});
+    }
   
 
 
