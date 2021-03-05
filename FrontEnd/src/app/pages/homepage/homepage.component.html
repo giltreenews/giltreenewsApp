@@ -4,7 +4,7 @@
         <ngb-carousel *ngIf="news">
           <ng-template ngbSlide *ngFor="let new of news">
             <div class="carousel-cell" *ngIf="new.urlToImage != null" >
-            <a routerLink="../article/{{ new._id }}"><img  src="{{new.urlToImage}}" alt="" style="width: 100%; height:75%" ></a>
+            <a routerLink="../detail-article/{{ new._id }}"><img  src="{{new.urlToImage}}" alt="" style="width: 100%; height:75%" ></a>
             <div class="carousel-caption" style="background-color:rgb(189, 178, 178);border: 1px solid transparent; border-radius: 5px;">
               <h3 style="color:rgb(32, 34, 30); text-align: center; font-weight: bolder;font-size:large;">{{ new.title }}</h3>
               
@@ -33,7 +33,7 @@
                 <h3 class="card-title" style="font-weight:bold;">{{ new.title }}</h3>
                 <p class="card-text">
                   <p>{{ new.content }}</p>
-                <button  class="btn btn-secondary" routerLink="/user/article/{{ new._id }}">Lire la suite de l'article</button>
+                <button  class="btn btn-secondary" routerLink="/user/detail-article/{{ new._id }}">Lire la suite de l'article</button>
                 <h5 style="margin-left:60%;">{{ new.publishedAt.substring(0, 10)+ ' ' + new.publishedAt.substring(11, 19) }}</h5>
               </div>
             </div>
@@ -48,7 +48,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let new of newsBis">
-                <td> <a routerLink="/user/article/{{ new._id }}"> {{ new.title }} </a></td>
+                <td> <a routerLink="/user/detail-article/{{ new._id }}"> {{ new.title }} </a></td>
               </tr>
             </tbody>
           </table>

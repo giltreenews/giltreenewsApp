@@ -24,7 +24,7 @@ export class HomepageComponent implements OnInit {
   }
 
   recupThreeNews(){
-    this.newsService.getLastthree().subscribe(
+    this.newsService.getAll({limit:3}).subscribe(
       data => {
         this.news = data;
         console.log(data)
@@ -35,7 +35,7 @@ export class HomepageComponent implements OnInit {
   }
 
   recupTwentyNews(){
-    this.newsService.getLasttwenty().subscribe(
+    this.newsService.getAll({limit:20}).subscribe(
       data => {
         this.newsBis = data;
         console.log(data);
