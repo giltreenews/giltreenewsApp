@@ -7,5 +7,5 @@ export interface CommentsModel {
         user?: UserModel,
         content?: string,
         createdAt?: Date,
-        answer?: string
+        answer?: []
 }
