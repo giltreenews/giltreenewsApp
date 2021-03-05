@@ -17,7 +17,7 @@ export class DetailCategoryComponent implements OnInit {
   ngOnInit(): void {
    this.route.params.subscribe(params =>{
       
-      this.service.searchByCategory(params['category']).subscribe(data=>{
+      this.service.getAll(params['category']).subscribe(data=>{
         this.news = data})
     });
     } 
