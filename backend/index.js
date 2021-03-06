@@ -6,6 +6,7 @@ var news = require('./routes/news');
 
 var user = require('./routes/user');
 var comments = require('./routes/comments');
+var preferences = require('./routes/preferences');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,6 +16,7 @@ app.use('/news', news);
 
 app.use('/user', user);
 app.use('/comments', comments);
+app.use('/preferences', preferences);
 
 var server = {
     port: 8080

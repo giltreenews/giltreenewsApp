@@ -1,4 +1,4 @@
-const model = require('../models/news.models')();
+const model = require('../models/news.models');
 
 var newsController = function () { }
 
@@ -31,7 +31,7 @@ var newsController = function () { }
         console.log(result.title);
         result.save();
         res.json(result);
-        });
+        }).populate("comments");
     }
     
     newsController.delete = function (req, res) {

@@ -1,0 +1,10 @@
+<div *ngFor="let comment of news.comments" >
+    <p>{{comment.user?.firstName}} {{comment.user?.lastName}}</p>
+    
+    <p>{{comment?.content}}</p>
+    <p>{{comment?.createdAt}}</p>
+    <!-- <input   [(ngModel)]="comments.answer"> 
+    <button (click)="add()">Répondre au commentaire </button> -->
+</div>
+<input   [(ngModel)]="comments.content">
+<button (click)="add()">Ajouter un commentaire </button>

@@ -7,5 +7,6 @@ var user = Schema({
     password: String,
     email: String,
     role: String,
+    preferences: []
 });
 module.exports = db.model('user', user);

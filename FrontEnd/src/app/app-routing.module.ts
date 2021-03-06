@@ -1,4 +1,4 @@
-import { CreateAccountComponent } from './create-account/create-account/create-account.component';
+
 import { LoginComponent } from './login/login/login.component';
 import { RoleGuard } from './guards/role.guard.guard';
 import { EditArticleComponent } from './pages/edit-article/edit-article.component';
@@ -15,7 +15,7 @@ import { UserComponent } from './layout/user/user.component';
 const routes: Routes = [
  
   { path: "login", component: LoginComponent },
-  { path: "create-account", component: CreateAccountComponent },
+ 
   { path: '', redirectTo : '/user/home',  pathMatch: 'full' },
   {path:'user', component: UserComponent, children: [
     { path: "home", component: HomepageComponent },

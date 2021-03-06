@@ -27,6 +27,15 @@ commentsController.add = function (req, res) {
                 user.password = undefined;
                 comment.user = user;
                 commentsModel.create(comment, (err, createdComment) =>{
+                    if(err) {
+                        console.error(err)
+                        return
+                    }
+
+                    if(!news.comments){
+                        console.log('hamid')
+                        news.comments = [];
+                    }
                     news.comments.push(createdComment._id);
                     news.save();
                     res.send(createdComment);
