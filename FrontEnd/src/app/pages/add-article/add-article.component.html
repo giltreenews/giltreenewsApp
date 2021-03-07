@@ -1,87 +1,66 @@
-<h1 style="text-align: center;">Ajouter un article</h1>
-
-<form (ngSubmit)=ajouterArticle() style="margin:200px; padding:50px; ">
-
-  <div class="input-group input-group-lg">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg">Auteur</span>
+<h2 mat-dialog-title style="color: darkorange">Ajouter un article</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="row"  #heroForm="ngForm">
+    <div class="col-sm-12">
+      <mat-form-field >
+        <mat-label>Titre</mat-label>
+        <input matInput [(ngModel)]="data.title" required #title="ngModel" name="title">
+        <mat-error *ngIf="title.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
     </div>
-    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="ngModel"
-      [(ngModel)]="newsShema.author" required>
-  </div>
-  <!-- <div [hidden]="author.valid || author.pristine">Le nom est obligatoire</div> -->
-
-  <br />
-  <div class="input-group input-group-lg">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg">Titre</span>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Auteur</mat-label>
+        <input matInput [(ngModel)]="data.author" required #author="ngModel" name="author">
+        <mat-error *ngIf="author.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
     </div>
-    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="title"
-      [(ngModel)]="newsShema.title" required>
-  </div>
-  <!-- <div [hidden]="title.valid || title.pristine"> Le title est obligatoire</div> -->
-  <br />
-  <div>
-
-    <div class="input-group input-group-lg">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Description</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-        name="description" [(ngModel)]="newsShema.description" required>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Date de publication</mat-label>
+        <input matInput type="date" [(ngModel)]="data.publishedAt" required #publishedAt="ngModel" name="publishedAt">
+        <mat-error *ngIf="publishedAt.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
     </div>
-    <br />
-    <!-- <div [hidden]="description.valid || description.pristine"> Le description est obligatoire</div> -->
-    <div>
-
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg">Contenu</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-          name="content" [(ngModel)]="newsShema.content" required>
-      </div>
-      <!-- <div [hidden]="content.valid || content.pristine"> Le content est obligatoire</div> -->
-      <br />
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg">Url image</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-          name="urlToImage" [(ngModel)]="newsShema.urlToImage" required>
-      </div>
-      <br />
-
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg"> Date de publication</span>
-        </div>
-        <input type="date" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-          name="publishedAt" [(ngModel)]="newsShema.publishedAt" required>
-      </div>
-      <br />
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg"> Catégorie</span>
-        </div>
-        <select name="content" [(ngModel)]="newsShema.category">
-          <option *ngFor="let category of categories">{{category}}</option>
-        </select>
-      </div>
-      <br />
-
-
-
-      <div>
-    
-        <br />
-        <button type="submit" class="btn btn-primary"> Ajouter</button>
-        
-
-
-      </div>
-
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Url image</mat-label>
+        <input matInput [(ngModel)]="data.urlToImage" required #urlToImage="ngModel" name="urlToImage">
+        <mat-error *ngIf="urlToImage.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
     </div>
-  </div>
-</form>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Catégorie</mat-label>
+        <mat-select [(ngModel)]="data.category" #category="ngModel" required name="category">
+          <mat-option  *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+    <mat-form-field >
+      <mat-label>Description</mat-label>
+      <textarea  rows="5" matInput [(ngModel)]="data.description" required #description="ngModel" name="description"></textarea>
+      <mat-error *ngIf="description.invalid">Ce champs est obligatoire</mat-error>
+    </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+    <mat-form-field >
+      <mat-label>Contenu</mat-label>
+      <textarea  rows="5" matInput  [(ngModel)]="data.content" required #content="ngModel" name="content"></textarea>
+      <mat-error *ngIf="content.invalid">Ce champs est obligatoire</mat-error>
+    </mat-form-field>
+    </div>
+
+
+
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button  mat-stroked-button mat-dialog-close>Annuler</button>
+  <button type="submit" mat-button class="primary-button" (click)="ajouterArticle(heroForm)">Sauvegarder</button>
+</mat-dialog-actions>
+
 

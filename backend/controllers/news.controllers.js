@@ -59,9 +59,7 @@ var newsController = function () { }
 
     newsController.update = function (req, res) {
          var body = req.body;
-            model.updateOne({ _id: body._id }, {
-            $set: body
-            }, (error, result) => {
+            model.findOneAndUpdate({ _id: body._id }, {$set: body}, {new:true}, (error, result) => {
              if (error)
                 throw error;
              res.send(result);

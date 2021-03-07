@@ -1,20 +1,18 @@
-<div class="container" *ngIf="news">
+<div style="margin: 25vh; margin-top: 50px">
+  <h1 style="color: darkorange" class="">{{news?.title | uppercase}}</h1>
+  <div>
+    <span style="color: darkorange; margin-right: 4px;">{{news?.category}}</span>
+    <span style=" margin-right: 4px;">{{news?.publishedAt | date : 'dd/MM/yyyy à hh:mm'}}</span> <span
+    *ngIf="news?.author"> par <span class="font-weight-bolder">{{news?.author}}</span></span>
+  </div>
+  <div class="text-center mt-4">
+    <img src="{{news?.urlToImage}}" style="border-radius: 10px; max-height:400px">
+  </div>
+  <div class="mt-5">
 
-    <h2 style="font-weight: bold;font-size: x-large">{{news.title}}</h2> 
-    <hr/>
-    
-      <div>
-         <img src="{{news.urlToImage}}" style="border-bottom: 1px solid black; width: 75%; height:75%">
-      </div> 
-      <div><label >Par : </label>{{ news.author}} </div> 
-      <div style="font-size: large;">
-         {{news.description}}
-      </div>
-      <div style="font-size: large;">
-         {{news.content}}
-      </div>
-    </div>
-    <div class="container">
+    <p style="font-size: 18px">{{news?.description}}</p>
+    <p style="font-size: 16px">{{news?.content}}</p>
+  </div>
     <app-comments [news]="news"></app-comments>
-    
-   </div>
+
+</div>

@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CommentsModel } from 'src/app/models/comments.model';
-import { NewsModel } from 'src/app/models/news.model';
-import { CommentsService } from 'src/app/services/comments.service';
-import { NewsService } from 'src/app/services/news.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {CommentsModel} from 'src/app/models/comments.model';
+import {NewsModel} from 'src/app/models/news.model';
+import {CommentsService} from 'src/app/services/comments.service';
+import {NewsService} from 'src/app/services/news.service';
+import {UserModel} from 'src/app/models/user.model';
+import {UserService} from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-comments',
@@ -11,23 +13,28 @@ import { NewsService } from 'src/app/services/news.service';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  @Input() 
-   news : NewsModel = {};
-  comments : CommentsModel = {};
-  answer : CommentsModel = {}
-  constructor(private commentsService: CommentsService,private route : ActivatedRoute, private newsService: NewsService) { }
+  @Input()
+  news: NewsModel = {};
+  comments: CommentsModel = {};
+  answer: CommentsModel = {};
+  user: UserModel;
 
-  ngOnInit(): void {
+  constructor(private commentsService: CommentsService,
+              private userService: UserService) {
   }
 
-  add(){
-    this.commentsService.add(this.news._id, this.comments).subscribe(data =>{
-      if(!this.news.comments){
+  ngOnInit(): void {
+    this.user = this.userService.getConnectedUser();
+  }
+
+  add() {
+    this.commentsService.add(this.news._id, this.comments).subscribe(data => {
+      if (!this.news.comments) {
         this.news.comments = [];
       }
-       this.news.comments.push(data);
-       this.comments = {}
-    })
+      this.news.comments.unshift(data);
+      this.comments = {};
+    });
   }
 
   // addAnswer(){

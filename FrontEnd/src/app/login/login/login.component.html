@@ -1,90 +1,71 @@
-
-    <div class="d-flex  align-items-center flex-column" style="height:100%; padding-top: 100px">
-        <span class="col1-sm cursor-pointer" style="font-size:x-large; outline:none;" routerLink="/user/home"> 
-            <span  style="font-weight: bolder;" >GILTREE</span>
-            <span style="font-weight: lighter;">NEWS</span>
+<div class="d-flex  align-items-center flex-column" style="height:100%; padding-top: 100px; background-color:#80808012">
+        <span class="col1-sm cursor-pointer" style="font-size:x-large; outline:none; margin-bottom:30px"
+              routerLink="/user/home">
+            <span style="font-weight: bolder;color: darkorange">GILTREE</span>
+            <span style="font-weight: lighter;"> NEWS</span>
           </span>
-    
-          <mat-tab-group dynamicHeight>
-            <mat-tab label="Connexion">
-              <div class="example-small-box mat-elevation-z4">
-                <mat-card class="example-card">
-                  <mat-card-header style="justify-content: center">
-                    <mat-card-title> <mat-icon style="font-size:50px;">account_circle</mat-icon></mat-card-title>
-                  </mat-card-header>
-                  <mat-card-content>
-                    <form class="example-form">
-                      <table class="example-full-width" cellspacing="0">
-                        <tr>
-                          <td>
-                            <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Adresse mail" [(ngModel)]="login.email" name="email" required>
-                            </mat-form-field>
-                          </td>
-                        </tr>
-                        <tr>
-                        <td><mat-form-field class="example-full-width">
-                          <input matInput placeholder="Mot de passe" [(ngModel)]="login.password"type="password" name="password" required>
-                        </mat-form-field></td>
-                      </tr></table>
-                    </form>
-                   
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <button mat-raised-button (click)="seconnecter()" color="primary">Se connecter</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-            </mat-tab>
-            <mat-tab label="Créer un compte">
-              <div class="example-large-box mat-elevation-z4">
-                <div class="example-small-box mat-elevation-z4">
-                  <mat-card class="example-card">
-                    <mat-card-header style="justify-content: center">
-                      <mat-card-title><mat-icon style="font-size:50px;;">person_add</mat-icon>
-                      </mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                      <form class="example-form">
-                        <table class="example-full-width" cellspacing="0">
-                          <tr>
-                           
-                          </tr>
-                          <tr>
-                            <td>
-                              <mat-form-field class="example-full-width">
-                              <input matInput placeholder="Prénom" [(ngModel)]="login.firstName" name="firstName" required>
-                              </mat-form-field>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <mat-form-field class="example-full-width">
-                              <input matInput placeholder="Nom" [(ngModel)]="login.lastName" name="lastName" required>
-                              </mat-form-field>
-                            </td>
-                          </tr>
-                          <td>
-                            <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Adresse mail" [(ngModel)]="login.email" name="email" required>
-                            </mat-form-field>
-                          </td>
-                          <tr>
-                          <td><mat-form-field class="example-full-width">
-                            <input matInput placeholder="Mot de passe" [(ngModel)]="login.password"type="password" name="password" required>
-                          </mat-form-field></td>
-                        </tr></table>
-                      </form>
-                     
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-raised-button (click)="confirmer()" color="primary" >Confirmer</button>
-                    </mat-card-actions>
-                  </mat-card>
-                </div>
-              </div>
-            </mat-tab>
-          </mat-tab-group>
+
+  <mat-tab-group dynamicHeight class="example-card example-small-box mat-elevation-z4 login-wrapper" mat-align-tabs="center" [(selectedIndex)]="selectedTab">
+    <mat-tab label="Connexion">
+    <div class="login-content">
+      <div class="d-flex justify-content-center my-4">
+        <mat-icon style="font-size:50px;">account_circle</mat-icon>
+      </div>
+      <form class="example-form mt-2 my-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Adresse mail" type="email" [(ngModel)]="login.email" name="email" #email="ngModel" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"  required>
+          <mat-error *ngIf="email.errors.required">Ce champs est obligatoire</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mot de passe" [(ngModel)]="login.password" [type]="hide ? 'password' : 'text'"
+                 name="password" required #password="ngModel">
+          <mat-icon class="cursor-pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="password.invalid">Ce champs est obligatoire</mat-error>
+        </mat-form-field>
+      </form>
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button (click)="seconnecter()" class="primary-button">Se connecter</button>
+      </div>
     </div>
-    
-   
+  </mat-tab>
+    <mat-tab label="Créer un compte">
+      <div class="login-content">
+        <div class="d-flex justify-content-center my-4">
+          <mat-icon style="font-size:50px;;">person_add</mat-icon>
+        </div>
+        <form class="example-form mt-2 my-3" [formGroup]="signupForm">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Prénom" formControlName="firstName" required>
+            <mat-error *ngIf="isControlHasError('firstName', 'required')">Ce champs est obligatoire</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nom" formControlName="lastName" required>
+            <mat-error *ngIf="isControlHasError('lastName', 'required')">Ce champs est obligatoire</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Adresse mail" formControlName="email" required>
+            <mat-error *ngIf="isControlHasError('email', 'required')">Ce champs est obligatoire</mat-error>
+            <mat-error *ngIf="isControlHasError('email', 'email')">Invalid email</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mot de passe" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+            <mat-icon class="cursor-pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="isControlHasError('password', 'required')">Ce champs est obligatoire</mat-error>
+            <mat-error *ngIf="isControlHasError('password', 'minlength')">Aux moins 6 caractères</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Confirmer mot de passe" formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" required>
+            <mat-icon class="cursor-pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="isControlHasError('confirmPassword', 'required')">Ce champs est obligatoire</mat-error>
+            <mat-error *ngIf="isControlHasError('confirmPassword', 'ConfirmPassword')">Les mots de passe ne sont pas identiques</mat-error>
+            <mat-error *ngIf="isControlHasError('confirmPassword', 'minlength')">Aux moins 6 caractères</mat-error>
+          </mat-form-field>
+        </form>
+        <div class="d-flex justify-content-center">
+          <button mat-raised-button (click)="confirmer()" class="primary-button">Confirmer</button>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

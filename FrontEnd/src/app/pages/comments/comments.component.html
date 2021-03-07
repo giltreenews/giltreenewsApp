@@ -1,10 +1,24 @@
-<div *ngFor="let comment of news.comments" >
-    <p>{{comment.user?.firstName}} {{comment.user?.lastName}}</p>
-    
-    <p>{{comment?.content}}</p>
-    <p>{{comment?.createdAt}}</p>
-    <!-- <input   [(ngModel)]="comments.answer"> 
+<div class="mt-5">
+  <span class="font-weight-bolder " style="font-size: 16px">{{news?.comments?.length}} Commentaires</span>
+  <div class="d-flex flex-column justify-content-center mt-4 mb-" *ngIf="user">
+
+    <textarea style="padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background: #f7f7f7;" placeholder="Votre commentaire" [(ngModel)]="comments.content"></textarea>
+    <div class="mt-2">
+
+      <button mat-button (click)="add()" class="primary-button">Ajouter un commentaire</button>
+    </div>
+  </div>
+  <div *ngFor="let comment of news?.comments"
+       style="background-color: #f7f7f7; padding:20px; border-radius: 10px;margin-top: 8px">
+    <span class="font-weight-bolder">{{comment.user?.firstName}} {{comment.user?.lastName}} </span>
+    <span style="font-size: 12px">{{comment?.createdAt | date : 'le dd/MM/yyyy à hh:mm'}}</span>
+
+    <p class="mt-2">{{comment?.content}}</p>
+    <!-- <input   [(ngModel)]="comments.answer">
     <button (click)="add()">Répondre au commentaire </button> -->
+  </div>
 </div>
-<input   [(ngModel)]="comments.content">
-<button (click)="add()">Ajouter un commentaire </button>
+

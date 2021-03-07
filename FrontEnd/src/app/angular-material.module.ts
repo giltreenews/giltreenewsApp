@@ -20,6 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 const modules: any[] = [
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -39,7 +40,8 @@ const modules: any[] = [
   MatSortModule,
   MatSidenavModule,
   MatProgressSpinnerModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDialogModule,
 ];
 @NgModule({
   imports: [ ...modules ],

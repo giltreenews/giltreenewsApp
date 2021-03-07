@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CategoryEnum } from 'src/app/enum/category.enum';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {CategoryEnum} from 'src/app/enum/category.enum';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,14 +11,19 @@ export class NavbarComponent implements OnInit {
   searchText: string;
   category: CategoryEnum;
   categoryEnum = CategoryEnum;
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {
+  }
+
   ngOnInit(): void {
   }
-  goTo(category){
+
+  goTo(category): void {
     this.category = category;
-    this.router.navigate(["/user/detail-category"], {queryParams: {category: category}})
+    this.router.navigate(['/user/detail-category'], {queryParams: {category}});
   }
-  search(){
-    this.router.navigate(["/user/detail-category"], {queryParams: {search: this.searchText}})
+
+  search(): void {
+    this.router.navigate(['/user/detail-category'], {queryParams: {search: this.searchText}});
   }
 }

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+mongoose.set('useFindAndModify', false);
 let db;
 
 module.exports = function connection(){

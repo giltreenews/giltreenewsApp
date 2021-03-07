@@ -1,16 +1,15 @@
-
-
-<div class="container" *ngFor="let new of news">
-
-    <h2 style="font-weight: bold;font-size: x-large">{{new.title}}</h2> 
-    <hr/>
-    
-      <div>
-         <img src="{{new.urlToImage}}" style="border-bottom: 1px solid black; width: 75%; height:75%">
-      </div> 
-      <div><label >Par : </label>{{ new.author}} </div> 
-      <div style="font-size: large;">
-         <a href=# routerLink="/user/detail-article/{{ new._id }}">{{new.description}} </a>
-      </div>
-     
+<div class="row justify-content-center" style="margin: 50px">
+  <div *ngFor="let new of news" class=" mat-elevation-z4 col-sm-3 new-item cursor-pointer  flex-column align-items-center mr-3" routerLink="/user/detail-article/{{ new._id }}"
+  style="margin-bottom: 20px; border: solid 2PX ORANGE; border-radius: 10px; padding-bottom: 10px">
+    <div style="width: inherit; margin-top: 10px " >
+      <img style="width: inherit; max-height: 250px;min-height: 250px; border-radius: 10px" [src]="new.urlToImage">
     </div>
+    <h2 class="title"> {{new.title}}</h2>
+    <p class="description mt-2"> {{new.description}}</p>
+    <div>
+      <span style="color: darkorange; margin-right: 4px;">{{new.category}}</span>
+      <span>{{new.publishedAt | date : 'dd/MM/yyyy'}}</span>
+    </div>
+  </div>
+</div>
+
