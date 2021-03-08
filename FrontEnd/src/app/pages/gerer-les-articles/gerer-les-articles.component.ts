@@ -39,6 +39,7 @@ export class GererLesArticlesComponent implements OnInit {
       this.news.paginator = this.paginator;
       this.news.sort = this.sort;
     })
+    this.newsmodel.comments.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }
 
 

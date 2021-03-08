@@ -6,6 +6,7 @@ import {CommentsService} from 'src/app/services/comments.service';
 import {NewsService} from 'src/app/services/news.service';
 import {UserModel} from 'src/app/models/user.model';
 import {UserService} from 'src/app/services/user.service';
+import { RoleEnum } from 'src/app/enum/role.enum';
 
 @Component({
   selector: 'app-comments',
@@ -18,6 +19,7 @@ export class CommentsComponent implements OnInit {
   comments: CommentsModel = {};
   answer: CommentsModel = {};
   user: UserModel;
+  roleEnum = RoleEnum;
 
   constructor(private commentsService: CommentsService,
               private userService: UserService) {

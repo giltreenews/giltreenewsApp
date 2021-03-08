@@ -7,14 +7,8 @@
 
   <mat-drawer-container class="example-container" hasBackdrop="false">
     <mat-drawer #drawer mode="push" position='end'>
-      <div>
-        <p>Les commentaires</p>
-        <ul *ngFor="let comment of newsmodel.comments">
-          <li><p>{{comment?.user?.firstName}} {{comment?.user?.lastName}}</p></li>
-
-          <li><p>{{comment?.content}}</p></li>
-          <li><p>{{comment?.createdAt}}</p></li>
-        </ul>
+      <div style="margin-left: 20px;">
+        <app-comments [news]="newsmodel"></app-comments>
       </div>
     </mat-drawer>
     <mat-drawer-content>
