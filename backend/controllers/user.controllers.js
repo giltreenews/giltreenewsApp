@@ -1,5 +1,7 @@
 var model = require('../models/user.models');
 const jwt = require('jsonwebtoken');
+var bcrypt = require("bcryptjs");
+
 
 var userControllers = function () { }
 
@@ -8,7 +10,12 @@ const accessTokenSecret = 'bzQfJfIfxTEnb3El';
 userControllers.register = function (req, res) {
     const user = req.body;
 
-    model.create(user, (err, result) => {
+    model.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        password: bcrypt.hashSync(req.body.password, 6),
+        email: req.body.email
+      }, (err, result) => {
         if(err) { 
             console.log(err)
         }
