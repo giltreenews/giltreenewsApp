@@ -1,19 +1,31 @@
 var model = require('../models/user.models');
 const jwt = require('jsonwebtoken');
+var bcrypt = require("bcryptjs");
+
 
 var userControllers = function () { }
 
 const accessTokenSecret = 'bzQfJfIfxTEnb3El';
 
-userControllers.register = function (req, res) {
+userControllers.register = function (req, res, next) {
     const user = req.body;
 
-    model.create(user, (err, result) => {
+    model.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        password: bcrypt.hashSync(req.body.password, 6),
+        email: req.body.email,
+        role: req.body.role,
+        preferences: req.body.preferences
+
+      }, (err, result) => {
+          
         if(err) { 
             console.log(err)
         }
         res.send(result)
     })
+
 }
 
 userControllers.login = function (req, res) {
@@ -23,7 +35,11 @@ userControllers.login = function (req, res) {
             res.status(401).send('wrong email or password');
             return;
         }
-        if(!user || user.password !== loginInfo.password){
+        var passwordIsValid = bcrypt.compareSync(
+            req.body.password,
+            user.password
+          );
+        if(!user || !passwordIsValid){
             res.status(401).send('wrong email or password');
             return;
         }
