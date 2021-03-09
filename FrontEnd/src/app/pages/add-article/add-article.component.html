@@ -1,4 +1,5 @@
-<h2 mat-dialog-title style="color: darkorange">Ajouter un article</h2>
+<h2 mat-dialog-title style="color: darkorange" *ngIf="!data?._id">Ajouter un article</h2>
+<h2 mat-dialog-title style="color: darkorange" *ngIf="data?._id">Editer un article</h2> 
 <mat-dialog-content class="mat-typography">
   <form class="row"  #heroForm="ngForm">
     <div class="col-sm-12">
