@@ -5,7 +5,7 @@ let db;
 module.exports = function connection(){
     mongoose.set('useCreateIndex', true);
     if(!db){
-        db = mongoose.createConnection('mongodb://localhost/giltreenews', {
+        db = mongoose.createConnection('mongodb+srv://softeam:softeamgiltreenews@giltreenews.idrvn.mongodb.net/giltreenews?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
