@@ -14,7 +14,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 })
 export class LoginComponent implements OnInit {
     login: UserModel = {};
-    hide = false;
+    hide = true;
     signupForm: FormGroup;
   selectedTab = 0;
 
