@@ -1,0 +1,11 @@
+<h1 mat-dialog-title style="color: red">Confirmation</h1>
+<mat-dialog-content class="mat-typography" style="font-size: 16px ">
+{{data}}
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button  mat-stroked-button (click)="dialogRef.close(false)">Non</button>
+  <button type="submit" mat-raised-button color="warn" (click)="dialogRef.close(true)">Oui</button>
+</mat-dialog-actions>
+
+

@@ -1,0 +1,46 @@
+<form (ngSubmit)=update() style="margin:200px; padding:50px">
+
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Auteur</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+            name="author" [(ngModel)]="news.author" required>
+    </div>
+    <!-- <div [hidden]="author.valid || author.pristine">Le nom est obligatoire</div> -->
+    <br/>
+
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Titre</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+            name="title" [(ngModel)]="news.title" required>
+    </div>
+    <!-- <div [hidden]="title.valid || title.pristine"> Le title est obligatoire</div> -->
+<br/>
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Description</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+            name="description" [(ngModel)]="news.description" required>
+    </div>
+    <!-- <div [hidden]="description.valid || description.pristine"> Le description est obligatoire</div> -->
+    <br/>
+
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Contenu</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+            name="content" [(ngModel)]="news.content" required>
+    </div>
+    <!-- <div [hidden]="content.valid || content.pristine"> Le content est obligatoire</div> -->
+    <br/>
+    <div>
+        <button type="submit" class="btn btn-primary"> Mettre à jour</button>
+
+
+    </div>
+</form>

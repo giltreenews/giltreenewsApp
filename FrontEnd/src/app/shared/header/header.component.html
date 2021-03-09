@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-between align-items-center"
+     style="height:100px; margin-left: 50px; margin-right: 50px">
+
+  <span class="cursor-pointer " style="font-size:x-large; outline:none;" routerLink="/user/home">
+      <span style="font-weight: bolder;color: darkorange">GILTREE</span>
+      <span style="font-weight: lighter;" class="color-grey"> NEWS</span>
+  </span>
+
+
+  <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="/login" *ngIf="!user">Se connecter</button>
+
+
+    <div class="d-flex align-items-center justify-content-center cursor-pointer" [matMenuTriggerFor]="menu" *ngIf="user">
+      <div class="mr-2" >
+        <mat-icon style="width: 50px; font-size: 50px; height: 50px">account_circle</mat-icon>
+      </div>
+
+      <span *ngIf="user" style="white-space:nowrap; margin-top: -4px">Bonjour {{ user.firstName }}</span>
+    </div>
+
+
+    <mat-menu #menu="matMenu" xPosition="before">
+
+      <button mat-menu-item (click)="signout()">Déconnexion</button>
+      <button mat-menu-item routerLink="/journalist/gerer-les-articles" *ngIf="user?.role === roleEnum.JOURNALIST">Gérer
+        mes articles
+      </button>
+
+    </mat-menu>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

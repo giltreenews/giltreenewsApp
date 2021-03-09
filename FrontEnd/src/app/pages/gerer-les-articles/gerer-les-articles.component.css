@@ -1,0 +1,26 @@
+.show-actions{
+    color: blue;
+    margin-right: 12px;
+}
+
+.update-actions{
+    color: orange;
+    margin-right: 12px;
+}
+
+.delete-actions{
+    color: red;
+}
+
+.header-wrapper{
+    margin-bottom: 30px;
+}
+
+.comment-action{
+    color:#007bff;
+    margin-right:12px;
+}
+
+.article:hover{
+  background-color: #8080801f;
+}

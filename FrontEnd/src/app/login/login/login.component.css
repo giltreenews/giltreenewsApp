@@ -1,0 +1,15 @@
+
+
+  mat-form-field {
+    display: block;
+  }
+
+  .login-wrapper{
+    background-color: white;
+    border-radius: 10px;
+    min-width: 350px;
+  }
+  .login-content{
+    margin: 20px;
+  }
+

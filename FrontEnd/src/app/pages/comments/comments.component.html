@@ -1,0 +1,36 @@
+<div class="mt-5">
+  <span class="font-weight-bolder " style="font-size: 16px">{{news?.comments?.length}} Commentaires</span>
+  <div class="d-flex flex-column justify-content-center mt-4 mb-" *ngIf="user && user.role === roleEnum.USER">
+
+    <textarea style="padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background: #f7f7f7;" placeholder="Votre commentaire" [(ngModel)]="comments.content"></textarea>
+    <div class="mt-2">
+
+      <button mat-button (click)="add()" class="primary-button">Ajouter un commentaire</button>
+    </div>
+  </div>
+  <div *ngFor="let comment of news?.comments; let i=index"
+       style="background-color: #f7f7f7; padding:20px; border-radius: 10px;margin-top: 8px">
+    <span class="font-weight-bolder">{{comment.user?.firstName}} {{comment.user?.lastName}} </span>
+    <span style="font-size: 12px">{{comment?.createdAt | date : 'le dd/MM/yyyy à hh:mm'}}</span>
+
+    <p class="mt-2">{{comment?.content}}</p>
+    <div *ngIf="comment.answer">
+
+      <span class="font-weight-bolder">{{comment?.answer?.user?.firstName}} {{comment?.answer?.user?.lastName}} a répondu </span>
+      <span style="font-size: 12px">{{comment?.answer?.createdAt | date : 'le dd/MM/yyyy à hh:mm'}}</span>
+    </div>
+
+    <p class="mt-2 "  >{{comment?.answer?.content}}</p>
+    <button *ngIf="!comment.answer && !showResponse[i]" mat-button (click)="showResponse[i] = true;">Répondre au commentaire </button>
+    <div *ngIf="!comment.answer && showResponse[i]">
+      <input   [(ngModel)]="answer">
+      <button mat-button (click)="addAnswer(comment,i)">Envoyer</button>
+      <button mat-button (click)="showResponse[i] = false; answer= '';">Annuler</button>
+    </div>
+   
+  </div>
+</div>
+

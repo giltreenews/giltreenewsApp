@@ -1,0 +1,66 @@
+<h2 mat-dialog-title style="color: darkorange">Ajouter un article</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="row"  #heroForm="ngForm">
+    <div class="col-sm-12">
+      <mat-form-field >
+        <mat-label>Titre</mat-label>
+        <input matInput [(ngModel)]="data.title" required #title="ngModel" name="title">
+        <mat-error *ngIf="title.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Auteur</mat-label>
+        <input matInput [(ngModel)]="data.author" required #author="ngModel" name="author">
+        <mat-error *ngIf="author.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Date de publication</mat-label>
+        <input matInput type="date" [(ngModel)]="data.publishedAt" required #publishedAt="ngModel" name="publishedAt">
+        <mat-error *ngIf="publishedAt.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Url image</mat-label>
+        <input matInput [(ngModel)]="data.urlToImage" required #urlToImage="ngModel" name="urlToImage">
+        <mat-error *ngIf="urlToImage.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-form-field >
+        <mat-label>Catégorie</mat-label>
+        <mat-select [(ngModel)]="data.category" #category="ngModel" required name="category">
+          <mat-option  *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.invalid">Ce champs est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+    <mat-form-field >
+      <mat-label>Description</mat-label>
+      <textarea  rows="5" matInput [(ngModel)]="data.description" required #description="ngModel" name="description"></textarea>
+      <mat-error *ngIf="description.invalid">Ce champs est obligatoire</mat-error>
+    </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+    <mat-form-field >
+      <mat-label>Contenu</mat-label>
+      <textarea  rows="5" matInput  [(ngModel)]="data.content" required #content="ngModel" name="content"></textarea>
+      <mat-error *ngIf="content.invalid">Ce champs est obligatoire</mat-error>
+    </mat-form-field>
+    </div>
+
+
+
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button  mat-stroked-button mat-dialog-close>Annuler</button>
+  <button type="submit" mat-button class="primary-button" (click)="ajouterArticle(heroForm)">Sauvegarder</button>
+</mat-dialog-actions>
+
+

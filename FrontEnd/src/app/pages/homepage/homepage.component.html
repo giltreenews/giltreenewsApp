@@ -1,0 +1,59 @@
+<div class="">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <ngb-carousel *ngIf="news">
+        <ng-template ngbSlide *ngFor="let new of news">
+          <div class="carousel-cell" *ngIf="new.urlToImage != null" style="width: 100%; height:50vh">
+            <a routerLink="../detail-article/{{ new._id }}"><img src="{{new.urlToImage}}"
+                                                                 style="width: 100%; height:100%" alt=""></a>
+            <div class="carousel-caption">
+              <h3 style="color:white; text-align: center; font-weight: bolder;font-size:large;">{{ new.title }}</h3>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+<div style="margin: 50px">
+
+  <div class="container-fluid">
+    <div class="mt-4">
+      <h1 style="color: darkorange;" class="font-weight-bolder"> Les dernieres nouvelles</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+
+      <div *ngFor="let new of news" class="row mb-4 new-item cursor-pointer" routerLink="/user/detail-article/{{ new._id }}">
+        <div class="col-sm-4 mr-4">
+          <img style="width: inherit; border-radius: 10px" [src]="new.urlToImage">
+        </div>
+        <div class="col-sm-6"  style="border-left: solid 4px #f37217;">
+          <h2> {{new.title}}</h2>
+          <span *ngIf="new.author"> par <span class="font-weight-bolder">{{new.author}}</span></span>
+          <p class="mt-2 content"> {{new.content}}</p>
+          <div>
+            <span style="color: darkorange; margin-right: 4px;">{{new.category}}</span>
+            <span>{{new.publishedAt | date : 'dd/MM/yyyy'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" style="border-left: solid 4px #f37217; padding-left: 40px">
+      <div  *ngFor="let new of newsBis" style="margin-bottom: 32px; padding: 10px" class="new-item cursor-pointer" routerLink="/user/detail-article/{{ new._id }}">
+        <span style="font-size: 18px;"> {{new.title}}</span>
+        <div style="margin-top: 8px">
+          <span style="color: darkorange; margin-right: 4px;">{{new.category}}</span>
+          <span>{{new.publishedAt | date : 'dd/MM/yyyy'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
