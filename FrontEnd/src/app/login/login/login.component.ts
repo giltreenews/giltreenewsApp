@@ -42,6 +42,10 @@ export class LoginComponent implements OnInit {
         this.registerservice.register(signup).subscribe((res) => {
             this.selectedTab = 0;
             this.toastr.success('Votre compte a bien été crée');
+        }, (error)=>{
+            if(error.status === 409){
+                this.toastr.error('Cet utilisateur existe déja');
+            }
         });
     }
 

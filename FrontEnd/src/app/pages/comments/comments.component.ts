@@ -20,6 +20,7 @@ export class CommentsComponent implements OnInit {
   answer: string;
   user: UserModel;
   roleEnum = RoleEnum;
+  showResponse : boolean[] = [];
 
   constructor(private commentsService: CommentsService,
               private userService: UserService) {
@@ -42,6 +43,7 @@ export class CommentsComponent implements OnInit {
   addAnswer(comment,i){
     this.commentsService.addAnswer(comment._id, this.answer).subscribe(data =>{
       this.news.comments[i] = data;
+      this.showResponse[i] =false;
     })
   }
 }

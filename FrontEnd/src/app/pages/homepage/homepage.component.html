@@ -1,6 +1,7 @@
 <div class="">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
       <ngb-carousel *ngIf="news">
         <ng-template ngbSlide *ngFor="let new of news">
           <div class="carousel-cell" *ngIf="new.urlToImage != null" style="width: 100%; height:50vh">
@@ -13,6 +14,7 @@
         </ng-template>
       </ngb-carousel>
     </div>
+    <div class="col-md-2"></div>
   </div>
 </div>
 

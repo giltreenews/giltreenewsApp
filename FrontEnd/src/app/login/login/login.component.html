@@ -13,8 +13,8 @@
       </div>
       <form class="example-form mt-2 my-3">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Adresse mail" type="email" [(ngModel)]="login.email" name="email" #email="ngModel" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"  required>
-          <mat-error *ngIf="email?.errors?.required">Ce champs est obligatoire</mat-error>
+          <input matInput placeholder="Adresse mail" type="email" [(ngModel)]="login.email" name="email" #email="ngModel"  required>
+          <mat-error *ngIf="email.invalid">Ce champs est obligatoire</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Mot de passe" [(ngModel)]="login.password" [type]="hide ? 'password' : 'text'"
