@@ -9,23 +9,24 @@ const accessTokenSecret = 'bzQfJfIfxTEnb3El';
 
 userControllers.register = function (req, res, next) {
     const user = req.body;
-
-    model.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        password: bcrypt.hashSync(req.body.password, 6),
-        email: req.body.email,
-        role: req.body.role,
-        preferences: req.body.preferences
-
-      }, (err, result) => {
-          
-        if(err) { 
-            console.log(err)
+    model.findOne({email: user.email},(err, userFound) => {
+        if(userFound){
+            return res.status(409).send('user already exist');
         }
-        res.send(result)
-    })
-
+        model.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            password: bcrypt.hashSync(req.body.password, 6),
+            email: req.body.email,
+            role: req.body.role,
+            preferences: req.body.preferences
+          }, (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            res.send(result)
+        })
+    });
 }
 
 userControllers.login = function (req, res) {
