@@ -14,13 +14,13 @@ var newsController = function () { }
                 if (err) { console.log(err); }
                 res.send(result);
                 console.log(result);
-            }).sort( { publishedAt: -1 } ).limit(limit);
+            }).populate('comments').sort( { publishedAt: -1 } ).limit(limit);
         }else{
             model.find(filter, (err, result) => {
                 if (err) { console.log(err); }
                 res.send(result);
                 console.log(result);
-            }).sort( { publishedAt: -1 } );
+            }).populate('comments').sort( { publishedAt: -1 } );
         }
     };
 

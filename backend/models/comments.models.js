@@ -6,7 +6,7 @@ var comments = Schema({
     user: Object,
     content: String,
     createdAt: Date,
-    answer : String
+    answer : Object
 
 });
 module.exports = db.model('comments', comments);

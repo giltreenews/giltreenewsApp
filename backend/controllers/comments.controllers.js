@@ -48,6 +48,34 @@ commentsController.add = function (req, res) {
 
     })
     }
+commentsController.addAnswer = function (req, res) {
+    const idComments = req.params.id;
+    const answer = req.body.content;
+    const user = req.user
+    commentsModel.findOne({ _id: idComments }, (err, comment) => {
+        if (err) { throw err }
+        if (!comment) { return res.status(404) }
+        userModel.findOne({ email: user.email }, (err, userInBd) => {
+            if (err) { throw err }
+            userInBd.password = undefined;
+            comment.answer = {
+                content: answer,
+                createdAt: new Date(),
+                user: userInBd
+            }
+            comment.save()
+            res.send(comment)
+        })
+
+    })
+          
+
+       
+               
+         
+
+        
+    }
     
     commentsController.getById = function (req, res) {
         let id = req.params.id;
@@ -59,4 +87,5 @@ commentsController.add = function (req, res) {
         });
     
     }
+   
 module.exports = commentsController;
