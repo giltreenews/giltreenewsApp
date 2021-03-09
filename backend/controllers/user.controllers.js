@@ -20,17 +20,13 @@ userControllers.register = function (req, res, next) {
             email: req.body.email,
             role: req.body.role,
             preferences: req.body.preferences
-    
           }, (err, result) => {
-              
-            if(err) { 
+            if(err) {
                 console.log(err)
             }
             res.send(result)
         })
     });
-    
-
 }
 
 userControllers.login = function (req, res) {
