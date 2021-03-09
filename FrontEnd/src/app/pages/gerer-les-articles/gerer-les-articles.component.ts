@@ -35,11 +35,13 @@ export class GererLesArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAll().subscribe((data: any) => {
+      data.forEach(article => {
+        article.comments.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      }); 
       this.news = new MatTableDataSource(data);
       this.news.paginator = this.paginator;
       this.news.sort = this.sort;
     })
-    this.newsmodel.comments.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }
 
 

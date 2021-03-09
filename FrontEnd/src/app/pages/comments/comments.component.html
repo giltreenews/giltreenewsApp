@@ -11,14 +11,21 @@
       <button mat-button (click)="add()" class="primary-button">Ajouter un commentaire</button>
     </div>
   </div>
-  <div *ngFor="let comment of news?.comments"
+  <div *ngFor="let comment of news?.comments; let i=index"
        style="background-color: #f7f7f7; padding:20px; border-radius: 10px;margin-top: 8px">
     <span class="font-weight-bolder">{{comment.user?.firstName}} {{comment.user?.lastName}} </span>
     <span style="font-size: 12px">{{comment?.createdAt | date : 'le dd/MM/yyyy à hh:mm'}}</span>
 
     <p class="mt-2">{{comment?.content}}</p>
-    <!-- <input   [(ngModel)]="comments.answer">
-    <button (click)="add()">Répondre au commentaire </button> -->
+    <span class="font-weight-bolder">{{comment?.answer?.user?.firstName}} {{comment?.answer?.user?.lastName}} </span>
+    <span style="font-size: 12px">{{comment?.answer?.createdAt | date : 'le dd/MM/yyyy à hh:mm'}}</span>
+
+    <p class="mt-2">{{comment?.answer?.content}}</p>
+    <div *ngIf="!comment.answer">
+      <input   [(ngModel)]="answer">
+      <button (click)="addAnswer(comment,i)">Répondre au commentaire </button>
+    </div>
+   
   </div>
 </div>
 

@@ -17,7 +17,7 @@ export class CommentsComponent implements OnInit {
   @Input()
   news: NewsModel = {};
   comments: CommentsModel = {};
-  answer: CommentsModel = {};
+  answer: string;
   user: UserModel;
   roleEnum = RoleEnum;
 
@@ -39,14 +39,10 @@ export class CommentsComponent implements OnInit {
     });
   }
 
-  // addAnswer(){
-  //   this.commentsService.add(this.comments.articleId, this.answer).subscribe(data =>{
-  //     if(!this.comments.answer){
-  //       this.comments.answer = [];
-  //     }
-  //      this.comments.answer.push(data);
-  //      this.answer = {}
-  //   })
-  // }
+  addAnswer(comment,i){
+    this.commentsService.addAnswer(comment._id, this.answer).subscribe(data =>{
+      this.news.comments[i] = data;
+    })
+  }
 }
 

@@ -21,5 +21,9 @@ export class CommentsService {
   add(articleId : any, comment : CommentsModel): Observable<any> {
     return this.http.post(`${baseUrl}/add/${articleId}`,comment)
   }
+  addAnswer(commentId : any, answer : string): Observable<any> {
+    return this.http.post(`${baseUrl}/addAnswer/${commentId}`,{content : answer})
+  }
 }
+
 
